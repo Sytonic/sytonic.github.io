@@ -4,7 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sytonic - Coming Soon</title>
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Sytonic" />
   <style>
+    /* roboto-flex-regular - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Roboto Flex';
+      font-style: normal;
+      font-weight: 400;
+      src: url('fonts/roboto-flex-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
     /* Reset */
     * {
       margin: 0;
@@ -13,7 +27,7 @@
     }
     body, html {
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto Flex', sans-serif;
       background: linear-gradient(135deg, #f0f8ff, #cfe7ff);
       color: #22436f;
       display: flex;
@@ -35,7 +49,7 @@
       color: #3b82f6;
       letter-spacing: 6px;
       margin-bottom: 1rem;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Arial', sans-serif;
       text-shadow: 0 0 10px #3b82f699;
     }
     h1 {
@@ -67,7 +81,7 @@
   <div class="placeholder-container" role="main" aria-label="Coming Soon Placeholder">
     <div class="logo" aria-label="Sytonic Logo">SYTONIC</div>
     <h1>Coming Soon</h1>
-    <p>We’re working on something great.</p>
+    <p>We’re working on something great. Stay tuned!</p>
     <div class="spinner" aria-hidden="true"></div>
   </div>
 </body>
