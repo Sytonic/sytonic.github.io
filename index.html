@@ -10,7 +10,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Sytonic" />
   <style>
-    /* roboto-flex-regular - latin */
     @font-face {
       font-display: swap;
       font-family: 'Roboto Flex';
@@ -18,8 +17,6 @@
       font-weight: 400;
       src: url('fonts/roboto-flex-v30-latin-regular.woff2') format('woff2');
     }
-
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -37,11 +34,26 @@
       user-select: none;
     }
     .placeholder-container {
+      position: relative;
+      overflow: hidden;
       max-width: 400px;
       padding: 2rem;
       background: white;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+    }
+    .svg-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .placeholder-container > *:not(.svg-bg) {
+      position: relative;
+      z-index: 1;
     }
     .logo {
       font-size: 2.5rem;
@@ -78,10 +90,11 @@
   </style>
 </head>
 <body>
-  <div class="placeholder-container" role="main" aria-label="Coming Soon Placeholder">
+  <div class="placeholder-container">
+    <img src="favicon/favicon.svg" alt="" class="svg-bg" aria-hidden="true" />
     <div class="logo" aria-label="Sytonic Logo">SYTONIC</div>
     <h1>Coming Soon</h1>
-    <p>We’re working on something great. Stay tuned!</p>
+    <p>We’re working on something great.</p>
     <div class="spinner" aria-hidden="true"></div>
   </div>
 </body>
