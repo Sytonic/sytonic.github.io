@@ -56,13 +56,38 @@
       z-index: 1;
     }
     .logo {
-      font-size: 2.5rem;
       font-weight: 900;
-      color: #3b82f6;
-      letter-spacing: 6px;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      color: var(--color-accent);
       font-family: 'Arial', sans-serif;
-      text-shadow: 0 0 10px #3b82f699;
+      text-shadow: 0 0 10px var(--color-accent)99;
+      transition: color 0.3s ease;
+    }
+    .wolf-gradient {
+      background: linear-gradient(
+        to bottom,
+        #4a90e2,
+        #357ab7,
+        #305f72,
+        #20425d
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    .yellow-gradient {
+      background: linear-gradient(
+        to bottom,
+        #fff176 10%,
+        #fbc02d 30%,
+        #f57c00 70%,
+        #bf5700 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
     h1 {
       font-size: 1.8rem;
@@ -92,9 +117,17 @@
 <body>
   <div class="placeholder-container">
     <img src="favicon/favicon.svg" alt="" class="svg-bg" aria-hidden="true" />
-    <div class="logo" aria-label="Sytonic Logo">SYTONIC</div>
+    <div class="logo" aria-label="Sytonic Logo">
+      <span class="yellow-gradient">S</span>
+      <span class="wolf-gradient">Y</span>
+      <span class="yellow-gradient">T</span>
+      <span class="wolf-gradient">O</span>
+      <span class="yellow-gradient">N</span>
+      <span class="wolf-gradient">I</span>
+      <span class="yellow-gradient">C</span>
+    </div>
     <h1>Coming Soon</h1>
-    <p>We’re working on something great.</p>
+    <p>We’re working on something great. Eventually...</p>
     <div class="spinner" aria-hidden="true"></div>
   </div>
 </body>
