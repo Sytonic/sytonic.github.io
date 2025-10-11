@@ -22,23 +22,46 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+    html {
       height: 100%;
+      background-image: url('photo-1710167829641-08c666960626.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    body {
+      margin: 0; 
+      min-height: 100vh;
+      width: 100%;
       font-family: 'Roboto Flex', sans-serif;
-      background: linear-gradient(135deg, #ffffff, #eeeeee);
       color: #22436f;
       display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
       user-select: none;
     }
+    .wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      animation: fadeIn 1000ms ease;
+      -webkit-animation: fadeIn 1000ms ease;
+      align-items: center;
+      justify-content: center;
+    }
     .placeholder-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
       position: relative;
       overflow: hidden;
       max-width: 400px;
+      height: 400px;
       padding: 2rem;
-      background: white;
+      background: #ffffff8b;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(204, 204, 204, 0.1);
     }
@@ -58,32 +81,18 @@
     .logo {
       font-weight: 900;
       font-size: 2.5rem;
-      color: var(--color-accent);
       font-family: 'Arial', sans-serif;
-      text-shadow: 0 0 10px var(--color-accent)99;
       transition: color 0.3s ease;
     }
     .wolf-gradient {
-      background: linear-gradient(
-        to bottom,
-        #4a90e2,
-        #357ab7,
-        #305f72,
-        #20425d
-      );
+      background: linear-gradient(to bottom, #4a90e2 10%, #357ab7 30%, #305f72 70%, #20425d 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       color: transparent;
     }
     .yellow-gradient {
-      background: linear-gradient(
-        to bottom,
-        #fff176 10%,
-        #fbc02d 30%,
-        #f57c00 70%,
-        #bf5700 100%
-      );
+      background: linear-gradient(to bottom, #fff176 10%, #fbc02d 30%, #f57c00 70%, #bf5700 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -112,23 +121,34 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+    @keyframes fadeIn {
+      from {top: 20%; opacity: 0;}
+      to {top: 100; opacity: 1;}
+    }
+    @-webkit-keyframes fadeIn {
+      from {top: 20%; opacity: 0;}
+      to {top: 100; opacity: 1;}
+    }
   </style>
 </head>
+
 <body>
-  <div class="placeholder-container">
-    <img src="favicon/favicon.svg" alt="" class="svg-bg" aria-hidden="true" />
-    <div class="logo" aria-label="Sytonic Logo">
-      <span class="yellow-gradient">S</span>
-      <span class="wolf-gradient">Y</span>
-      <span class="yellow-gradient">T</span>
-      <span class="wolf-gradient">O</span>
-      <span class="yellow-gradient">N</span>
-      <span class="wolf-gradient">I</span>
-      <span class="yellow-gradient">C</span>
+  <div class="wrapper">
+    <div class="placeholder-container">
+      <img src="favicon/favicon.svg" alt="" class="svg-bg" aria-hidden="true" />
+      <div class="logo" aria-label="Sytonic Logo">
+        <span class="yellow-gradient">S</span>
+        <span class="wolf-gradient">Y</span>
+        <span class="yellow-gradient">T</span>
+        <span class="wolf-gradient">O</span>
+        <span class="yellow-gradient">N</span>
+        <span class="wolf-gradient">I</span>
+        <span class="yellow-gradient">C</span>
+      </div>
+      <h1></h1>
+      <p>We’re working on something great. Eventually...</p>
+      <div class="spinner" aria-hidden="true"></div>
     </div>
-    <h1></h1>
-    <p>We’re working on something great. Eventually...</p>
-    <div class="spinner" aria-hidden="true"></div>
   </div>
 </body>
 </html>
