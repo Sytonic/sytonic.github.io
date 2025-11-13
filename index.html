@@ -10,6 +10,22 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Sytonic" />
   <style>
+    :root {
+      --color-footer-bg: light-dark(rgba(255, 255, 255, 0.75), rgba(17, 25, 40, 0.75));
+      --color-border: light-dark(rgba(209, 213, 219, 0.3), rgba(255, 255, 255, 0.125));
+      --color-footer-text: light-dark(#000000, #ffffff);
+      color-scheme: light dark;
+    }
+
+    /* Manual overrides */
+    html[data-theme="light"] {
+      color-scheme: light;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -59,14 +75,16 @@
       transition: color 0.3s ease;
     }
 
-    .wolf-gradient {
+    .blue-gradient {
       background: linear-gradient(to bottom, #4a90e2 10%, #357ab7 30%, #305f72 70%, #20425d 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .yellow-gradient {
       background: linear-gradient(to bottom, #fff176 10%, #fbc02d 30%, #f57c00 70%, #bf5700 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -75,7 +93,18 @@
       from { opacity: 0; transform: translateY(-20%); }
       to { opacity: 1; transform: translateY(0); }
     }
-
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      color: var(--color-footer-text);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px solid var(--color-border);
+      backdrop-filter: blur(2px) saturate(180%);
+      -webkit-backdrop-filter: blur(2px) saturate(180%);
+      background-color: var(--color-main-bg);
+    }
     /* Dark Mode */
     @media (prefers-color-scheme: dark) {
       html, body {
@@ -95,14 +124,21 @@
     <div class="placeholder-container">
       <div class="logo" aria-label="Sytonic Logo">
         <span class="yellow-gradient">S</span>
-        <span class="wolf-gradient">Y</span>
+        <span class="blue-gradient">Y</span>
         <span class="yellow-gradient">T</span>
-        <span class="wolf-gradient">O</span>
+        <span class="blue-gradient">O</span>
         <span class="yellow-gradient">N</span>
-        <span class="wolf-gradient">I</span>
+        <span class="blue-gradient">I</span>
         <span class="yellow-gradient">C</span>
       </div>
     </div>
   </div>
+
+
+  <footer>
+    <script>
+      document.querySelector('footer').innerHTML = `&copy; ${new Date().getFullYear()} Kreatious`;
+    </script>
+  </footer>
 </body>
 </html>
