@@ -33,3 +33,6 @@ Disallow: /
 
 User-agent: newsai
 Disallow: /
+
+User-agent: Barkrowler
+Disallow: /
