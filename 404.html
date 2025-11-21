@@ -23,6 +23,7 @@
     h1 {
       font-size: 3rem;
       margin-bottom: 0.5em;
+      margin-top: 0;
     }
     p {
       margin-bottom: 2em;
@@ -38,6 +39,16 @@
     }
     a:hover {
       background: #bbdefb;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #202020;
+        color: white;
+      }
+      .container {
+        background: #252525;
+      }
     }
   </style>
 </head>
