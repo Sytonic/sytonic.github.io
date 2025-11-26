@@ -39,3 +39,6 @@ Disallow: /
 
 User-agent: Barkrowler
 Disallow: /
+
+User-agent: Sogou web spider
+Disallow: /
