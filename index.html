@@ -92,7 +92,7 @@
       from { opacity: 0; transform: translateY(-20%); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
     footer {
       text-align: center;
       padding: 1rem 0;
@@ -104,7 +104,25 @@
       backdrop-filter: blur(2px) saturate(180%);
       -webkit-backdrop-filter: blur(2px) saturate(180%);
     }
-    
+
+    .wrapper {
+      position: relative;
+      border: 0px solid red; /* visually see wrapper boundaries */
+    }
+
+
+    .logo-xmas {
+      position: absolute;
+      top: -10px;    /* shifts the image upward */
+      left: -40px;   /* shifts the image leftward */
+      width: 110px;
+      height: 127px;
+      background: url("christmas_logo.png") no-repeat;
+      background-size: contain; /* scales image accordingly */
+      z-index: 10;
+      pointer-events: none;
+    }
+
     /* Dark Mode */
     @media (prefers-color-scheme: dark) {
       html, body {
@@ -120,7 +138,9 @@
 </head>
 
 <body>
+  
   <div class="wrapper">
+    <div class="logo-xmas"></div>
     <div class="placeholder-container">
       <div class="logo" aria-label="Sytonic Logo">
         <span class="yellow-gradient">S</span>
@@ -134,7 +154,7 @@
       A space of stillness and presence, where the everyday quiets down and things simply are, open to whatever may come.
     </div>
   </div>
-  
+
   <footer>
     <script>
       document.querySelector('footer').innerHTML = `&copy; ${new Date().getFullYear()} Sytonic`;
