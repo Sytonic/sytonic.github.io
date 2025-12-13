@@ -17,7 +17,6 @@
       color-scheme: light dark;
     }
 
-    /* Manual overrides */
     html[data-theme="light"] {
       color-scheme: light;
     }
@@ -127,7 +126,7 @@
   
   <div class="wrapper">
     <div class="placeholder-container">
-      <div class="logo" aria-label="Sytonic Logo">
+      <!-- <div class="logo" aria-label="Sytonic Logo">
         <span class="yellow-gradient">S</span>
         <span class="blue-gradient">Y</span>
         <span class="yellow-gradient">T</span>
@@ -135,10 +134,29 @@
         <span class="yellow-gradient">N</span>
         <span class="blue-gradient">I</span>
         <span class="yellow-gradient">C</span>
+      </div> -->
+
+      <div id="rotatingMessage">
+        <!-- Message will be injected here on load -->
       </div>
-      A space of stillness and presence, where the everyday quiets down and things simply are, open to whatever may come.
     </div>
   </div>
+
+  <script>
+    const messages = [
+      "A space of stillness and presence, where the everyday quiets down and things simply are, open to whatever may come.",
+      "There are times when you have to give up one thing to preserve another.",
+      "Sometimes good people make bad choices. It doesn't mean they are bad people. It means they're human.",
+      "Do you look away from the truth because the romanticised world is so much better?",
+    ];
+
+    function setRandomMessage() {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      document.getElementById('rotatingMessage').textContent = messages[randomIndex];
+    }
+
+    window.addEventListener('load', setRandomMessage);
+  </script>
 
   <footer>
     <script>
@@ -147,7 +165,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
