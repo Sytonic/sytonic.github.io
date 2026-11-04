@@ -2,61 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>404 Not Found</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff">
+  <title>404 Not Found</title>
+
   <style>
-    body {
-      background: #f8f9fa;
-      color: #333;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    .container {
-      max-width: 400px;
-      margin: auto;
-      padding: 30px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5em;
-      margin-top: 0;
-    }
-    p {
-      margin-bottom: 2em;
-    }
-    a {
-      color: #2196f3;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-      padding: 8px 14px;
-      background: #e3f2fd;
-      transition: background 0.2s;
-    }
-    a:hover {
-      background: #bbdefb;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { min-height: 100vh; display: grid; place-items: center; padding: 1rem; font-family: Arial, sans-serif; text-align: center; background: #fff; color: #333; }
+    .container { width: min(100%, 500px); padding: 2rem; display: flex; flex-direction: column; justify-content: center; min-height: 200px; background: rgba(255, 255, 255, .75); box-shadow: 0 0 10px rgba(204, 204, 204, .5); backdrop-filter: blur(6px) saturate(180%); animation: fadeIn 1s ease; }
+    h1 { font-size: 3rem; margin-bottom: .5em; }
+    p { margin-bottom: 2em; }
+    a { align-self: center; padding: 8px 14px; border-radius: 4px; background: #e3f2fd; color: #2196f3; font-weight: bold; text-decoration: none; }
+    a:hover { background: #bbdefb; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @media (prefers-color-scheme: dark) {
-      body {
-        background: #202020;
-        color: white;
-      }
-      .container {
-        background: #252525;
+        body { background: rgb(10, 10, 10); color: #fff; }
+        .container { background: rgba(30, 30, 30, 0); box-shadow: 0 0 10px rgba(0, 0, 0, .5); }
+        a { background: #263b50; color: #64b5f6; }
+        a:hover { background: #345574; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .container { animation: none;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
+  <main class="container">
     <h1>404</h1>
     <p>Sorry, the page you were looking for cannot be found.</p>
     <a href="/">Back to Home</a>
-  </div>
+  </main>
 </body>
 </html>
